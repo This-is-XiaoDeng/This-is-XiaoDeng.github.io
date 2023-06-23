@@ -30,6 +30,7 @@
 
   <div class="container d-flex align-items-center justify-content-center vh-100">
     <div class="card text-center shadow">
+      <div class="card-header">线路1</div>
       <div class="card-body">
         <script src="js/flv.min.js"></script>
         <video id="videoElement" width="100%" controls=1 height="100%"></video>
@@ -49,6 +50,28 @@
 
       </div>
     </div>
+    <br>
+    <div class="card text-center shadow">
+      <div class="card-header">线路2</div>
+      <div class="card-body">
+        <script src="js/flv.min.js"></script>
+        <video id="videoElement" width="100%" controls=1 height="100%"></video>
+        <script>
+          if (flvjs.isSupported()) {
+            var videoElement = document.getElementById('videoElement');
+            var flvPlayer = flvjs.createPlayer({
+              type: 'flv',
+              isLive: true,
+              url: 'http://kr-sr.cncn-1.openfrp.top:32969/live/livestream.flv'
+            });
+            flvPlayer.attachMediaElement(videoElement);
+            flvPlayer.load();
+            flvPlayer.play();
+          }
+        </script>
+
+      </div>
+
   </div>
   <!-- MDB5 -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.9.0/mdb.min.js"></script>
